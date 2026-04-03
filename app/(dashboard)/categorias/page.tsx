@@ -29,7 +29,7 @@ const categories = (data.objectResponse ?? []).map((c) => ({
   slug: c.slug,
   description: c.description ?? "",
   image: c.image ?? "",
-  isActive: c.active,      // ← era is_active, ahora es active
+  isActive: c.isActive,      // ← era is_active, ahora es active
   createdAt: "",
   updatedAt: "",
 }))
