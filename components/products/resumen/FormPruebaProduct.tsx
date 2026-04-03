@@ -391,7 +391,6 @@ const handleSaveProduct = (productData: Partial<Product>) => {
           open={deleteDialogOpen}
           onOpenChange={setDeleteDialogOpen}
           onConfirm={confirmDelete}
-          isDeleting={isDeleting}
         />
         
 

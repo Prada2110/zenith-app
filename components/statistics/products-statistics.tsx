@@ -120,7 +120,10 @@ export function ProductsStatistics() {
                     border: "1px solid hsl(var(--border))",
                     borderRadius: "8px",
                   }}
-                  formatter={(value: number) => [`${value}%`, "Porcentaje"]}
+                  formatter={(value, name) => [
+    `$${Number(value ?? 0).toLocaleString()}`,
+    name
+  ]}
                 />
                 <Legend 
                   verticalAlign="bottom" 

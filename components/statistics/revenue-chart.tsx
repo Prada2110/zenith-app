@@ -87,7 +87,10 @@ export function RevenueChart() {
                   borderRadius: "8px",
                 }}
                 labelStyle={{ color: "hsl(var(--foreground))" }}
-                formatter={(value: number) => [`$${value.toLocaleString()}`, ""]}
+                formatter={(value, name) => [
+    `$${Number(value ?? 0).toLocaleString()}`,
+    name
+  ]}
               />
               <Legend />
               <Area

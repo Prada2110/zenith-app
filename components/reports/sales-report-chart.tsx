@@ -46,12 +46,34 @@ const weeklyData = [
 type ChartType = "area" | "bar" | "line"
 type Period = "weekly" | "monthly"
 
+type ChartData = {
+  label: string
+  ventas: number
+  costos: number
+  ganancias: number
+}
+
+
+
 export function SalesReportChart() {
   const [chartType, setChartType] = React.useState<ChartType>("area")
   const [period, setPeriod] = React.useState<Period>("monthly")
 
-  const data = period === "monthly" ? monthlyData : weeklyData
-  const xKey = period === "monthly" ? "month" : "day"
+  const data: ChartData[] =
+  period === "monthly"
+    ? monthlyData.map(item => ({
+        label: item.month,
+        ventas: item.ventas,
+        costos: item.costos,
+        ganancias: item.ganancias,
+      }))
+    : weeklyData.map(item => ({
+        label: item.day,
+        ventas: item.ventas,
+        costos: item.costos,
+        ganancias: item.ganancias,
+      }))
+
 
   const renderChart = () => {
     const commonProps = {
@@ -64,7 +86,7 @@ export function SalesReportChart() {
         return (
           <BarChart {...commonProps}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-            <XAxis dataKey={xKey} className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
+            <XAxis dataKey="label" />
             <YAxis className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
             <Tooltip 
               contentStyle={{ 
@@ -84,7 +106,7 @@ export function SalesReportChart() {
         return (
           <LineChart {...commonProps}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-            <XAxis dataKey={xKey} className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
+            <XAxis dataKey="label" />
             <YAxis className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
             <Tooltip 
               contentStyle={{ 
@@ -104,7 +126,7 @@ export function SalesReportChart() {
         return (
           <AreaChart {...commonProps}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-            <XAxis dataKey={xKey} className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
+            <XAxis dataKey="label" />
             <YAxis className="text-xs" tick={{ fill: 'hsl(var(--muted-foreground))' }} />
             <Tooltip 
               contentStyle={{ 

@@ -59,7 +59,10 @@ export function SalesChart() {
                   borderRadius: "8px",
                   color: "oklch(0.95 0 0)",
                 }}
-                formatter={(value: number) => [`$${value.toLocaleString()}`, "Ventas"]}
+                formatter={(value, name) => [
+                  `${value ?? 0}`,
+                  name
+                ]}
                 labelStyle={{ color: "oklch(0.60 0 0)" }}
               />
               <Area

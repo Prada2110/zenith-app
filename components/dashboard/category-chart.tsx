@@ -44,7 +44,12 @@ export function CategoryChart() {
                   borderRadius: "8px",
                   color: "oklch(0.95 0 0)",
                 }}
-                formatter={(value: number) => [`${value}%`, "Porcentaje"]}
+                formatter={(value, name) => {
+                  if (typeof value === "number") {
+                    return [`$${value}`, name]
+                  }
+                  return ["$0", name]
+                }}
               />
               <Legend
                 verticalAlign="bottom"

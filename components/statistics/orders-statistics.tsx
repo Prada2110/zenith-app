@@ -111,10 +111,10 @@ export function OrdersStatistics() {
                     borderRadius: "8px",
                   }}
                   labelStyle={{ color: "hsl(var(--foreground))" }}
-                  formatter={(value: number, name: string) => [
-                    name === "pedidos" ? value : `$${value.toLocaleString()}`,
-                    name === "pedidos" ? "Pedidos" : "Promedio"
-                  ]}
+                 formatter={(value, name) => [
+    `$${Number(value ?? 0).toLocaleString()}`,
+    name
+  ]}
                 />
                 <Bar dataKey="pedidos" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
               </BarChart>

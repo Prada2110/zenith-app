@@ -114,7 +114,10 @@ export function InventoryStatistics() {
                       borderRadius: "8px",
                     }}
                     labelStyle={{ color: "hsl(var(--foreground))" }}
-                    formatter={(value: number) => [`$${formatCurrency(value)}`, "Valor"]}
+                                        formatter={(value, name) => [
+                      `$${value ?? 0}`,
+                      name
+                    ]}
                   />
                   <Bar dataKey="value" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                 </BarChart>

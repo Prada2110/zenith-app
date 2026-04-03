@@ -43,7 +43,26 @@ const stats = [
   },
 ]
 
-export function OrdersStats() {
+type Venta = {
+  id: number
+  tableNumber: string
+  customerCount: number
+  waiter: string
+  notes: string | null
+  paymentMethod: string
+  items: {
+    id: number
+    product: number
+    quantity: number
+    subtotal: number
+    notes: string | null
+  }[]
+  subtotal: number
+  tip: number
+  total: number
+}
+
+export function OrdersStats({ ventas }: { ventas: Venta[] }) {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat) => (

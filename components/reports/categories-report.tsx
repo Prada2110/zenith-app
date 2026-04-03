@@ -66,7 +66,10 @@ export function CategoriesReport() {
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(value: number) => [`$${formatCurrency(value)}`, "Ingresos"]}
+                  formatter={(value, name) => [
+                    `${value ?? 0}`,
+                    name
+                  ]}
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
                     border: '1px solid hsl(var(--border))',

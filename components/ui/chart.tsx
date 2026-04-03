@@ -5,6 +5,10 @@ import * as RechartsPrimitive from 'recharts'
 
 import { cn } from '@/lib/utils'
 
+import {
+  TooltipProps
+} from "recharts"
+
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const
 
@@ -101,6 +105,14 @@ ${colorConfig
     />
   )
 }
+
+type CustomFormatter = (
+  value: number,
+  name: string,
+  item: any,
+  index: number,
+  payload: any
+) => React.ReactNode
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
