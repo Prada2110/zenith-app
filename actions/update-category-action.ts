@@ -24,7 +24,7 @@ export async function updateCategoria(prevState: ActionState, formData: FormData
 
   console.log("actualizar categoria body:", body)
 
-  const res = await fetch(`${process.env.API_URL}/categoria/actualizar-categoria`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categoria/actualizar-categoria`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,

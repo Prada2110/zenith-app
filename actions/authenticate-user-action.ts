@@ -22,7 +22,7 @@ export async function authenticate(prevState: ActionStateType, formData: FormDat
     }
   }
 
-  const url = `${process.env.API_URL}/auth/iniciar-sesion`
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/iniciar-sesion`
 
   let json
   try {

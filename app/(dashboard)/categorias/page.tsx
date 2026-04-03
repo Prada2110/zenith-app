@@ -6,7 +6,7 @@ import { CategoryResponseSchema } from "@/src/schemas"
 
 async function getCategorias() {
   const token = await getToken()
-  const res = await fetch(`${process.env.API_URL}/categoria/leer-categorias`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categoria/leer-categorias`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   })

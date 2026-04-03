@@ -32,7 +32,7 @@ export async function register( prevState: ActionStateType,  formData: FormData 
         }
     }
 
-    const url = `${process.env.API_URL}/usuario/crear-usuario`
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/usuario/crear-usuario`
 
     const req = await fetch(url, {
         method: 'POST',

@@ -7,7 +7,7 @@ import ProductosPage from "@/components/products/resumen/FormPruebaProduct"
 
 async function getUserProducto() {
   const token = await getToken()
-  const url = `${process.env.API_URL}/producto/leer-productos`
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/producto/leer-productos`
 
   const req = await fetch(url, {
     headers: {
@@ -31,7 +31,7 @@ async function getUserProducto() {
 
 async function getCategorias() {
   const token = await getToken()
-  const res = await fetch(`${process.env.API_URL}/categoria/leer-categorias`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categoria/leer-categorias`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   })

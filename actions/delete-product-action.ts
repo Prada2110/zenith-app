@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache"
 export async function deleteProducto(id: string) {
   const token = await getToken()
 
-  const res = await fetch(`${process.env.API_URL}/producto/eliminar-producto/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/producto/eliminar-producto/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

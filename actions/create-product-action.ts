@@ -30,7 +30,7 @@ export async function createProducto(prevState: ActionState, formData: FormData)
   isFeatured: formData.get("isFeatured") === "true",
 }
 
-  const res = await fetch(`${process.env.API_URL}/producto/crear-producto`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/producto/crear-producto`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

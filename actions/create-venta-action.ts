@@ -30,7 +30,7 @@ export async function createVenta(prevState: ActionState, formData: FormData) {
 
   console.log("crear venta body:", JSON.stringify(body, null, 2))
 
-  const res = await fetch(`${process.env.API_URL}/venta/crear-venta`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/venta/crear-venta`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

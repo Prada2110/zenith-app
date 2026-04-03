@@ -4,7 +4,7 @@ import { VentaResponseSchema } from "@/src/schemas"
 
 async function getVenta(id: string) {
   const token = await getToken()
-  const res = await fetch(`${process.env.API_URL}/venta/leer-venta/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/venta/leer-venta/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   })

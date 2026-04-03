@@ -37,7 +37,7 @@ category: parseInt(formData.get("category") as string) || 0,
 
 // id ya es "1", "2", etc. — correcto para la URL
 
-  const res = await fetch(`${process.env.API_URL}/producto/actualizar-producto`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/producto/actualizar-producto`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,

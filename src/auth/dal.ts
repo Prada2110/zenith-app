@@ -15,7 +15,7 @@ export async function verifySession() {
     redirect('/autenticacion/login')
   }
 
-  const url = `${process.env.API_URL}/auth/me`
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/me`
   const req = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` },
     cache: 'no-store'
