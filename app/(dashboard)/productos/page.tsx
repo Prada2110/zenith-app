@@ -45,7 +45,7 @@ async function getCategorias() {
     slug: c.slug,
     description: c.description ?? "",
     image: c.image ?? "",
-    isActive: c.active,
+    isActive: c.isActive,
   }))
 }
 
