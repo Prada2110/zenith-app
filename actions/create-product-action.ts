@@ -41,6 +41,7 @@ export async function createProducto(prevState: ActionState, formData: FormData)
 
   const json = await res.json()
 //   console.log("crear producto:", json)
+ console.log("API URL:", process.env.NEXT_PUBLIC_API_URL)
 
   if (!res.ok || json.statusCode !== 200) {
     return { errors: [json.message ?? "Error al crear producto"], success: "" }

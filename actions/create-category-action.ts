@@ -23,6 +23,7 @@ export async function createCategoria(prevState: ActionState, formData: FormData
   console.log("crear categoria body:", body)
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categoria/crear-categoria`, {
+    
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -30,6 +31,8 @@ export async function createCategoria(prevState: ActionState, formData: FormData
     },
     body: JSON.stringify(body),
   })
+
+ 
 
   const text = await res.text()
   const json = text ? JSON.parse(text) : null
